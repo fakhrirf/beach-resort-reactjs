@@ -63,14 +63,16 @@ class RoomProvider extends Component {
 
     handleChange = event => {
         const target = event.target
-        const value = target.type === 'cheeckbox' ? target.checked:target.value;
-        const name = event.target.name;
+        const value = target.type === 'checkbox' ? target.checked:target.value;
+        const name = target.name;
         console.log(name, value, target.type);
+
         this.setState(
             {
             [name]:value
         }, 
-        this.filterRooms) 
+        this.filterRooms
+        ); 
         // console.log(`this is type: ${type}, this is name: ${name}, this is value: ${value}`);
     };
 
@@ -90,6 +92,7 @@ class RoomProvider extends Component {
         // all the rooms
         let tempRooms = [...rooms];
         // /transform value
+        // get capacity
         capacity = parseInt(capacity)
         price = parseInt(price);
         // 
@@ -113,7 +116,7 @@ class RoomProvider extends Component {
             tempRooms = tempRooms.filter(room => room.breakfast === true)
         }
         // filter by pets
-        if(pets){
+        if (pets){
             tempRooms = tempRooms.filter(room => room.pets === true);
         }
 

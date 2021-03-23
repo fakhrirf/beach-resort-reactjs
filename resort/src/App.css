@@ -491,8 +491,8 @@ h6 {
   display: flex;
 }
 .size-input {
-  width: 40%;
-  padding: 0.2rem;
+  width: 44%;
+  padding: 0.1rem;
   border: 1px solid var(--mainBlack);
   border-radius: 0.3rem;
   margin-right: 0.3rem;
